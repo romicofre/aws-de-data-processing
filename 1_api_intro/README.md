@@ -25,7 +25,10 @@ Pero es muy engorroso, mejor probar las siguientes soluciones!
 
 
 ### AWS SDK
-Utilizando código Python.
+Realizar los pasos de AWS CLI, para iniciar sesión y poder ejecutar el siguiente código en la consola.
+En la terminal, dentro de la carpeta "1_api_intro" Utilizando código Python:
+- Instalar dependencias: `pip install -r requirements.txt`
+- Ejecutar código: `python sdk.py`
 
 ### AWS Management Console
 Bueno, esta es la interfaz gráfica de AWS, que nos sirve para un vistazo más agradable y con varias opciones a un par de clics.
