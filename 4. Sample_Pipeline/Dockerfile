@@ -1,3 +1,6 @@
+# build this Docker image with:
+# docker build .
+
 # set base image (host OS)
 FROM python:3.8
 

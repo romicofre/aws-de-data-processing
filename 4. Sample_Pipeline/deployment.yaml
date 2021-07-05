@@ -4,6 +4,9 @@ metadata:
   name: test-deploy
   namespace: test-ns
 spec:
+  selector:
+    matchLabels:
+      app: test
   replicas: 2
   template:
     metadata:
@@ -21,13 +24,13 @@ spec:
               memory: "128Mi"
               cpu: "250m"
           env:
-            - name: TENANT_ID
+            - name: AWS_KEY
               valueFrom:
                 configMapKeyRef:
-                  name: jms-pubsub-cfg-pe
-                  key: tenant.id
-            - name: CLIENT_ID
+                  name: test-cfg
+                  key: key
+            - name: AWS_SECRET
               valueFrom:
                 configMapKeyRef:
-                  name: jms-pubsub-cfg-pe
-                  key: client.id
+                  name: test-cfg
+                  key: secret
