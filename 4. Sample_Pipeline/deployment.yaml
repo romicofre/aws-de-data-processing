@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deploy
+  namespace: test-ns
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+        - name: test-container
+          image: sqs-suscriber:latest
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "150m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          env:
+            - name: TENANT_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: jms-pubsub-cfg-pe
+                  key: tenant.id
+            - name: CLIENT_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: jms-pubsub-cfg-pe
+                  key: client.id
