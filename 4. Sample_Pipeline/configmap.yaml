@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-cfg
+  namespace: test-ns
+data:
+  key: your-aws-key
+  secret: your-aws-secret
+  
