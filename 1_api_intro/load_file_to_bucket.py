@@ -1,4 +1,3 @@
-
 import boto3
 from botocore.exceptions import ClientError
 import os
@@ -6,7 +5,6 @@ import os
 
 def upload_file(file_name, bucket, object_name=None):
     """Upload a file to an S3 bucket
-
     :param file_name: Local file to upload
     :param bucket: Bucket to upload to
     :param object_name: S3 object name. If not specified then file_name is used
@@ -28,6 +26,11 @@ def upload_file(file_name, bucket, object_name=None):
     return True
 
 
+# one way
 s3 = boto3.client('s3')
-with open("FILE_NAME", "rb") as f:
-    s3.upload_fileobj(f, "BUCKET_NAME", "OBJECT_NAME")
+with open("test.txt", "rb") as f:
+    # f can be object only
+    s3.upload_fileobj(f, "dip-de-2022", "test.txt")
+    
+# other way
+upload_file("test.txt", "dip-de-2022")
