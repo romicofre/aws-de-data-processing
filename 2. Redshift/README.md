@@ -34,3 +34,9 @@ Ejemplo de una consulta para obtener el error o los errores de las ejecuciones d
 
 ### create_and_insert.sql
 Crea una tabla e inserta datos existentes en otra tabla. Muy útil para realizar limpieza y transformaciones.
+
+
+# UPDATE
+Layers with psycopg2.
+Need main code, in lambda handler and create layer with ARN from:
+https://github.com/jetbridge/psycopg2-lambda-layer
