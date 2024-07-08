@@ -15,6 +15,14 @@ Carpeta que contiene lo necesario para crear una función lambda.
 
 **Archivo.zip** Se almacena en s3 y luego se crea una función lambda usando este código fuente
 en formato zip almacenado en s3.
+Las variables de entorno son:
+    AWS_RS_DB_NAME
+    AWS_RS_DB_HOST
+    AWS_RS_DB_PORT
+    AWS_RS_DB_USER
+    AWS_RS_DB_PASS
+    AWS_ACCES_KEY_ID
+    AWS_SECRET_ACCES_KEY
 
 **lambda_function.py** Transformación del archivo _copy_from_s3.py_, para poder ejecutarlo en 
 una función lambda, pero realiza la misma tarea. Es necesario incluirlo con la biblioteca,
